@@ -1,0 +1,15 @@
+{
+  "directory": "src",
+  "delete": true,
+  "location": "top",
+  "structure": "filesystem",
+  "export": ["named"],
+  "include": [
+    "src/app",
+    "src/entities",
+    "src/features",
+    "src/pages",
+    "src/shared",
+    "src/widgets"
+  ]
+} 
