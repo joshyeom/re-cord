@@ -38,7 +38,7 @@ export const MainPage = () => {
   }
 
   const handleAnalyze = () => {
-    if (!canAnalyze) return
+    // if (!canAnalyze) return
     navigate('/analyzing')
   }
 
@@ -65,7 +65,7 @@ export const MainPage = () => {
             </button>
             <button
               onClick={handleAnalyze}
-              disabled={!canAnalyze}
+              // disabled={!canAnalyze}
               className={`flex-1 py-3 px-4 rounded-xl font-serif font-medium text-base shadow-md transition-all ${canAnalyze ? 'bg-pink-400 text-white hover:bg-pink-500 hover:-translate-y-0.5 hover:shadow-lg' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
             >
               오늘을 분석
