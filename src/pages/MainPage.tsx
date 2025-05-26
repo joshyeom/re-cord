@@ -9,6 +9,19 @@ export const MainPage = () => {
   const [canAnalyze, setCanAnalyze] = useState(false);
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const { data } = await supabase.from("entries").select("*");
+  //     const entries = data?.map((item) => item.content);
+  //     return entries;
+  //   };
+
+  //   (async () => {
+  //     const entries = await fetchData();
+  //     console.log(entries);
+  //   })();
+  // }, []);
+
   useEffect(() => {
     const checkTime = () => {
       // KST 기준 현재 시각 계산
@@ -70,7 +83,7 @@ export const MainPage = () => {
           </button>
           <button
             onClick={handleAnalyze}
-            disabled={!canAnalyze}
+            // disabled={!canAnalyze}
             className={`flex-1 py-3 px-4 rounded-xl font-serif font-medium text-base shadow-md transition-all ${
               canAnalyze
                 ? "bg-pink-400 text-white hover:bg-pink-500 hover:-translate-y-0.5 hover:shadow-lg"

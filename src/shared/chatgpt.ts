@@ -7,10 +7,10 @@ const openai = new OpenAI({
   });
   
 
-export const requestChatGPT = async (systemPrompt: string, userTemplate: string) => {
+export const requestChatGPT = async (systemPrompt: string, userInput: string) => {
     try {
       const response = await openai.chat.completions.create({
-        model: "gpt-4-turbo-preview",
+        model: "gpt-4-turbo",
         messages: [
           {
             role: "system",
@@ -18,13 +18,13 @@ export const requestChatGPT = async (systemPrompt: string, userTemplate: string)
           },
           {
             role: "user",
-            content: userTemplate
+            content: userInput
           }
         ],
         temperature: 0.6,
         max_tokens: 4000, // 충분한 응답 길이 확보
-        presence_penalty: 0.1,  // 반복 감소
-        frequency_penalty: 0.1  // 다양한 표현 유도
+        presence_penalty: 0.4,
+        frequency_penalty: 0.3,
       
       });
 

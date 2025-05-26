@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { supabase } from "../shared/supabase";
 import { analyzeEntries } from "../features/analyze/api";
+import { useNavigate } from "react-router-dom";
 
 export const AnalyzingPage = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchAndAnalyze = async () => {
       const kstNow = new Date(
@@ -39,15 +41,15 @@ export const AnalyzingPage = () => {
           return;
         }
         const result = await analyzeEntries(contents);
-        // 결과 처리 (예: analyses 테이블 저장, 결과 페이지 이동 등)
-        console.log(result);
+        // 결과 페이지로 이동하며 결과 전달
+        navigate("/analyze-result", { state: { result } });
       } catch (e) {
         console.error(e);
       }
     };
 
     fetchAndAnalyze();
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="max-w-xl mx-auto my-32 p-10 bg-white/90 rounded-2xl shadow-xl border border-white/30 backdrop-blur-md flex flex-col items-center">

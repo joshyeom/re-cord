@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Memory Bank 관리 원칙
+
+- 이 프로젝트의 모든 memory-bank 관련 문서(핵심, 세부, 리포트 등)는 `/Users/yeomjeongho/idea-memo-app/docs/memory-bank` 경로에 생성 및 관리한다.
+- 기존 memory-bank 폴더 대신 docs/memory-bank를 표준 경로로 사용한다.
+- 문서 생성, 수정, 리포트 등 모든 작업은 이 경로를 기준으로 한다.
+
