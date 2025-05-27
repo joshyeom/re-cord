@@ -56,7 +56,7 @@ export const analyzeEntries = async (entries: string[]) => {
   const created_at = new Date().toISOString();
 
   // Supabase에 프롬프트 저장 및 id 추출
-  const { data: promptData, error: promptError } = await supabase.from('prompt_versions').insert([
+  const { data: promptData } = await supabase.from('prompt_versions').insert([
     {
       content: systemPrompt,
       created_at,
